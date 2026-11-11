@@ -23,7 +23,7 @@ dist-ssr
 *.crt
 *.cer
 *.jks
-*.keystoreUp
+*.keystore
 secrets/
 credentials*
 *secret*
