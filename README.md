@@ -1,5 +1,7 @@
 # Svetozar Bozilovic, portfolio
 
+**Live site: https://svetozarbozilovic-portfolio.netlify.app/**
+
 Personal portfolio of a frontend developer with five years of experience in React and TypeScript. The site tells the story of my work: a video surveillance platform at Anteklab (Aylook), web pages at Zerox, freelance work, and the first steps at Laba Innovations and WebFax.
 
 ## What the site contains
@@ -40,8 +42,6 @@ src/
 ## About the media
 
 The screenshots, videos, logos and certificates that appear on the live site are **not included in this repository**. Most of them show the Aylook platform and client environments, so they cannot be published in git repository. The `public/media/` folder is excluded through `.gitignore` on purpose.
-
-Because of that, a local copy of the project runs correctly, but images and videos appear as missing. To see the finished site with all the material, visit the live version or ask me for a walkthrough.
 
 ## Run locally
 

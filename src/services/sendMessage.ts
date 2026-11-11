@@ -6,8 +6,6 @@ export interface ContactMessage {
   message: string;
 }
 
-const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
-
 const openMailClient = ({ name, email, message }: ContactMessage) => {
   const subject = encodeURIComponent(`Portfolio message from ${name}`);
   const body = encodeURIComponent(`${message}\n\n${name}\n${email}`);
@@ -15,19 +13,19 @@ const openMailClient = ({ name, email, message }: ContactMessage) => {
 };
 
 /**
- * Sends the message to a form service (VITE_CONTACT_ENDPOINT, e.g. a Formspree URL).
- * Without an endpoint it falls back to opening the visitor's email app.
+ * Sends the message to Netlify Forms (the form named "contact" in index.html).
+ * Netlify does not run locally, so in development it opens the visitor's email app instead.
  */
 export const sendMessage = async (values: ContactMessage) => {
-  if (!endpoint) {
+  if (import.meta.env.DEV) {
     openMailClient(values);
     return "mailto" as const;
   }
 
-  const response = await fetch(endpoint, {
+  const response = await fetch("/", {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify(values),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ "form-name": "contact", ...values }).toString(),
   });
 
   if (!response.ok) throw new Error("The message could not be sent");
