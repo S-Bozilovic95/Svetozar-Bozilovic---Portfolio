@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens. Values are space-separated RGB so Tailwind can add opacity. */
+@layer base {
+  :root,
+  :root[data-theme="dark"] {
+    --background: 22 24 29;
+    --surface: 27 30 36;
+    --deep: 16 18 22;
+    --card: 32 35 42;
+    --border: 50 55 65;
+    --foreground: 236 238 242;
+    --muted-foreground: 168 174 185;
+    --primary: 214 181 116;
+    --primary-foreground: 22 24 29;
+    --tint: 42 37 25;
+    --tint-border: 92 78 49;
+    --destructive: 232 120 110;
+    --shadow: 0 0 0;
+    --shadow-alpha: 0.45;
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --background: 247 245 240;
+    --surface: 239 236 228;
+    --deep: 228 224 213;
+    --card: 255 255 255;
+    --border: 221 217 206;
+    --foreground: 29 27 38;
+    --muted-foreground: 90 88 103;
+    --primary: 30 63 143;
+    --primary-foreground: 255 255 255;
+    --tint: 233 238 250;
+    --tint-border: 198 210 236;
+    --destructive: 192 57 43;
+    --shadow: 29 27 38;
+    --shadow-alpha: 0.12;
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-base leading-[1.75] text-foreground antialiased transition-colors duration-200 max-md:text-[16px];
+  }
+
+  [id] {
+    scroll-margin-top: 84px;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-primary;
+  }
+
+  .grid-pattern {
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 55px, rgb(var(--border)) 55px 56px),
+      repeating-linear-gradient(90deg, transparent 0 55px, rgb(var(--border)) 55px 56px);
+    opacity: 0.2;
+    mask-image: linear-gradient(#000, transparent 80%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
