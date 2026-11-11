@@ -1,6 +1,7 @@
 import BackToTop from "./components/BackToTop";
 import Navbar from "./components/Navbar";
 import LightboxProvider from "./context/LightboxProvider";
+import { useScrollToHash } from "./hooks/useScrollToHash";
 import { useTheme } from "./hooks/useTheme";
 import Contact from "./sections/Contact/Contact";
 import Education from "./sections/Education/Education";
@@ -9,6 +10,7 @@ import Hero from "./sections/Hero/Hero";
 
 const App = () => {
   const { theme, handleToggleTheme } = useTheme();
+  useScrollToHash();
 
   return (
     <LightboxProvider>
