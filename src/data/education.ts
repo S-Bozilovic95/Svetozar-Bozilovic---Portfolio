@@ -29,20 +29,21 @@ export const courses: Course[] = [
 export const skills: SkillGroup[] = [
   {
     label: "Core",
-    items: "TypeScript, JavaScript (ES6+), React, Next.js, Electron, HTML5, CSS3/SCSS",
+    items: "JavaScript (ES6+), TypeScript, React.js, Next.js, HTML5, CSS3/SCSS, Electron.js",
   },
   {
     label: "Data and state",
-    items: "WebSockets, REST, TanStack Query, Redux Toolkit, Zustand, MobX",
+    items: "WebSockets, REST APIs, TanStack Query, Axios, Redux Toolkit, MobX, Zustand",
   },
   {
     label: "UI and forms",
-    items: "MUI, Tailwind CSS, Styled Components, React Hook Form, Zod",
+    items:
+      "MUI, Tailwind CSS, Styled Components, Bootstrap, BEM, React Hook Form, Formik, Zod, Yup",
   },
   {
     label: "Testing and tools",
     items:
-      "Vitest, Jest, React Testing Library, Git, GitLab CI/CD, Swagger, Jira, Figma, Claude Code",
+      "Vitest, Jest, React Testing Library, Git, GitHub, GitLab CI/CD, Swagger, Jira, Figma, Claude Code",
   },
   {
     label: "Languages",
